@@ -2,29 +2,23 @@
 
 ## Compiling
 
-1.  Clone the repo with `git clone https://github.com/hallcristobal/tpgz.git`
+1)  Clone the repo with `git clone https://github.com/aksame/sc2plus2.git`
 
-3)  In the root `tpgz` folder, run:
+2)  Copy your NTSC-U Soulcalibur 2 ISO to the root `sc2plus2` folder, then rename it to `grseaf.iso`.
 
-    ```
-    git submodule update --init --recursive
-    ```
-
-4)  Copy your NTSC-U Twilight Princess ISO to the root `tpgz` folder, then rename it to `gz2e01.iso`.
-
-5)  Install devkitpro.
+3)  Install devkitpro.
 
     - Windows: Download [here](https://github.com/devkitPro/installer/releases)
     - MacOS/Linux: Read [this guide](https://devkitpro.org/wiki/Getting_Started)
 
-6)  Download [Romhack-Compiler](https://github.com/hallcristobal/romhack-compiler/releases).
+4)  Download [Romhack-Compiler](https://github.com/hallcristobal/romhack-compiler/releases).
     This is used to add our compiled code into the ISO.<br>
     _(It is recommended that you add romhack.exe to your PATH.)_
 
-7)  Run `make` in the root `tpgz` folder to compile the code.
+5)  Run `make` in the root `sc2plus2` folder to compile the code.
 
-8)  Run `$ROMHACK_PATH\\romhack build --raw` to create a new ISO with our changes applied.<br>
-    The new ISO is located at `build/tpgz.iso`.
+6)  Run `$ROMHACK_PATH\\romhack build --raw` to create a new ISO with our changes applied.<br>
+    The new ISO is located at `build/sc2plus2.iso`.
 
 ## Using Patches
 
@@ -36,7 +30,7 @@ Patch files are a convenient way to share your changes with others.
   romhack build --raw --patch
   ```
 
-  The new patch file is located at `build/tpgz.patch`.
+  The new patch file is located at `build/sc2plus2.patch`.
 
 - To apply a patch, run:
 
@@ -45,17 +39,3 @@ Patch files are a convenient way to share your changes with others.
   ```
 
   Your patched ISO will be named \<output.iso>.
-
-## Fonts
-
-To compile alternative fonts:
-
-1. Place your font in `external/fonts/fonts/`
-
-2. Replace the following command in the Makefile:
-
-   ```rust
-   cargo run -I fonts/your_font.ttf -S 18.0 -N Your_Font_Name -O build
-   ```
-
-3. Run `make font`
